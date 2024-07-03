@@ -4,10 +4,12 @@ class Product
     public $name;
     public $price;
     public $category;
+    public $description;
 
-    public function setName($name)
+    public function __construct($name, $description)
     {
         $this->name = strtolower($name);
+        $this->description = $description;
     }
 
     public function setCategory($category)
@@ -27,18 +29,17 @@ class Product
     }
 }
 
-$game1 = new Product();
-$game1->setName("Fifa 2024");
+$game1 = new Product("Fifa 2024", "A popular football simulation game.");
 $game1->price = 40;
 $game1->setCategory("Sports");
 
-$game2 = new Product();
-$game2->setName("Call of Poop");
+$game2 = new Product("Call of Poop", "A first-person shooter game.");
 $game2->price = 10;
 $game2->setCategory("FPS");
 
 echo "Naam: " . $game2->name . "<br>";
 echo "Categorie: " . $game2->category . "<br>";
+echo "Beschrijving: " . $game2->description . "<br>";
 echo "Prijs zonder BTW: " . $game2->formatPrice() . "<br>";
 echo "Prijs inclusief BTW: " . $game2->showSalesPrice() . "<br>";
 
