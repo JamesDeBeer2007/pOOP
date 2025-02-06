@@ -10,7 +10,7 @@
 
     class Product
     {
-        public $name = "Een spel!"
+        public $name = "Een spel!";
     }
 
     $game1 = new Product();
